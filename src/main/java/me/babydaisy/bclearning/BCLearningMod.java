@@ -1,6 +1,7 @@
 package me.babydaisy.bclearning;
 
 import com.mojang.logging.LogUtils;
+import me.babydaisy.bclearning.block.ModBlocks;
 import me.babydaisy.bclearning.item.ModCreativeModTabs;
 import me.babydaisy.bclearning.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -26,6 +27,7 @@ public class BCLearningMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

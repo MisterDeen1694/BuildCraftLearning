@@ -1,6 +1,7 @@
 package me.babydaisy.bclearning.item;
 
 import me.babydaisy.bclearning.BCLearningMod;
+import me.babydaisy.bclearning.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -23,6 +24,9 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.IRON_GEAR.get());
                         output.accept(ModItems.GOLD_GEAR.get());
                         output.accept(ModItems.DIAMOND_GEAR.get());
+
+                        output.accept(ModBlocks.QUARRY.get());
+                        output.accept(ModBlocks.PUMP.get());
                     })
                     .build());
 

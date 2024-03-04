@@ -5,5 +5,8 @@
   "item.bc_learning.gold_gear": "Gold Gear",
   "item.bc_learning.diamond_gear": "Diamond Gear",
 
+  "block.bc_learning.quarry": "Quarry",
+  "block.bc_learning.pump": "Pump",
+
   "creativetab.bc_learning_tab": "BuildCraft Learning"
 }
