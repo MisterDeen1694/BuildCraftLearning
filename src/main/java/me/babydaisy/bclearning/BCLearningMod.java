@@ -1,6 +1,9 @@
 package me.babydaisy.bclearning;
 
 import com.mojang.logging.LogUtils;
+import me.babydaisy.bclearning.item.ModCreativeModTabs;
+import me.babydaisy.bclearning.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -16,13 +19,13 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BCLearningMod.MOD_ID)
 public class BCLearningMod {
-    // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "bc_learning";
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public BCLearningMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModCreativeModTabs.register(modEventBus);
+        ModItems.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -32,8 +35,8 @@ public class BCLearningMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) { }
 
-    // Add the example block item to the building blocks tab
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {  }
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+    }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent

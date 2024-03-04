@@ -1,0 +1,9 @@
+{
+  "item.bc_learning.wood_gear": "Wood Gear",
+  "item.bc_learning.stone_gear": "Stone Gear",
+  "item.bc_learning.iron_gear": "Iron Gear",
+  "item.bc_learning.gold_gear": "Gold Gear",
+  "item.bc_learning.diamond_gear": "Diamond Gear",
+
+  "creativetab.bc_learning_tab": "BuildCraft Learning"
+}
