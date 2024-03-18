@@ -1,5 +1,6 @@
 package me.babydaisy.bclearning.item.custom;
 
+import me.babydaisy.bclearning.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -28,21 +29,13 @@ public class WrenchItem extends Item {
         if (!pContext.getLevel().isClientSide()) {
             BlockPos positionClicked = pContext.getClickedPos();
             Player player = pContext.getPlayer();
-            boolean foundBlock = false;
 
-            for (int i = 0; i <= positionClicked.getY() + 64; i++) {
-                BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
+                BlockState state = pContext.getLevel().getBlockState(positionClicked);
 
-                if (isValuableBlock(state)) {
-                    outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
-                    foundBlock = true;
-                    break;
+                if (isWrenchable(state)) {
+                    player.sendSystemMessage(Component.literal("This Block is Wrenchable (" + I18n.get(state.getBlock().getDescriptionId()) +")"));
                 }
-            }
 
-            if (!foundBlock) {
-                player.sendSystemMessage(Component.literal("No Ores Found!"));
-            }
         }
 
         pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(), player -> player.broadcastBreakEvent(player.getUsedItemHand()));
@@ -50,12 +43,8 @@ public class WrenchItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Found " + I18n.get(block.getDescriptionId()) + " at (" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
-    }
-
-    private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.DIAMOND_ORE);
+    private boolean isWrenchable(BlockState state) {
+        return state.is(ModTags.Blocks.WRENCHABLE);
     }
 
     @Override
