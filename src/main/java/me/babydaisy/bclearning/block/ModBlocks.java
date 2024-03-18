@@ -1,6 +1,7 @@
 package me.babydaisy.bclearning.block;
 
 import me.babydaisy.bclearning.BCLearningMod;
+import me.babydaisy.bclearning.block.custom.QuarryBlock;
 import me.babydaisy.bclearning.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -18,7 +19,7 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, BCLearningMod.MOD_ID);
 
-    public static final RegistryObject<Block> QUARRY = registerBlock("quarry", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> QUARRY = registerBlock("quarry", () -> new QuarryBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> PUMP = registerBlock("pump", () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
