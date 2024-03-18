@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " # ",
+    "#$#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:diamond"
+    },
+    "$": {
+      "item": "bc_learning:gold_gear"
+    }
+  },
+  "result": {
+    "item": "bc_learning:diamond_gear"
+  }
+}

@@ -25,6 +25,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.GOLD_GEAR.get());
                         output.accept(ModItems.DIAMOND_GEAR.get());
 
+                        output.accept(ModItems.WRENCH.get());
+
                         output.accept(ModBlocks.QUARRY.get());
                         output.accept(ModBlocks.PUMP.get());
                     })
