@@ -1,6 +1,7 @@
 package me.babydaisy.bclearning.item;
 
 import me.babydaisy.bclearning.BCLearningMod;
+import me.babydaisy.bclearning.item.custom.FuelItem;
 import me.babydaisy.bclearning.item.custom.WrenchItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,7 +20,7 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_GEAR = ITEMS.register("diamond_gear", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().durability(64)));
 
-    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry", () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+    public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry", () -> new FuelItem(new Item.Properties().food(ModFoods.STRAWBERRY), 400));
 
 
     public static void register(IEventBus eventBus) {
